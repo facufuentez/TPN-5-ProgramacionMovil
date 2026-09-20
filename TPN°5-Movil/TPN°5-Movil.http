@@ -1,0 +1,6 @@
+@TPN_5_MOVIL_HostAddress = http://localhost:5156
+
+GET {{TPN_5_MOVIL_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
