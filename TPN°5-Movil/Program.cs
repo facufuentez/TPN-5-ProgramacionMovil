@@ -87,10 +87,10 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+/*using (var scope = app.Services.CreateScope())
 {
     await DbInitializer.InitializeAsync(scope.ServiceProvider);
-}
+}*/
 
 app.UseStaticFiles();
 
@@ -119,11 +119,8 @@ app.Use(async (context, next) =>
     }
 });
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthentication();
 app.UseAuthorization();
